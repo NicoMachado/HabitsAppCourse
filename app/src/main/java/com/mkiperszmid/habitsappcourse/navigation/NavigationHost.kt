@@ -60,7 +60,7 @@ fun NavigationHost(
         }
 
         composable(
-            NavigationRoute.Detail.route + "?habitId={habitId}",
+            route = NavigationRoute.Detail.route + "?habitId={habitId}",
             arguments = listOf(
                 navArgument("habitId") {
                     type = NavType.StringType
