@@ -17,8 +17,7 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(
     private val loginUseCases: LoginUseCases,
     @IoDispatcher private val dispatcher: CoroutineDispatcher
-) :
-    ViewModel() {
+) :   ViewModel() {
     var state by mutableStateOf(LoginState())
         private set
 
@@ -35,6 +34,11 @@ class LoginViewModel @Inject constructor(
             is LoginEvent.PasswordChange -> {
                 state = state.copy(
                     password = event.password
+                )
+            }
+            LoginEvent.SignUp -> {
+                state = state.copy(
+                    signUp = true
                 )
             }
         }
